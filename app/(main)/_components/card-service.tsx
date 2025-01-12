@@ -25,7 +25,7 @@ const CardService: FunctionComponent<CardServiceProps> = ({
           </h3>
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-6 h-[220px]">
+      <CardContent className="p-6 lg:h-[220px] min-h-[220px]">
         <p className="text-lg text-gray-300 leading-relaxed whitespace-pre-wrap">
           {content}
         </p>
