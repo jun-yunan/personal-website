@@ -1,0 +1,63 @@
+import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import Image from 'next/image';
+import { FunctionComponent } from 'react';
+import ButtonSocial from './button-social';
+import TypingEffect from './typing-effect';
+
+interface HomeProps {}
+
+const Home: FunctionComponent<HomeProps> = () => {
+  return (
+    <div className="w-full h-[450px] mt-[50px] flex items-center justify-around">
+      <div className="flex flex-col items-start gap-y-8">
+        <div className="flex flex-col items-start gap-y-2">
+          <p className="text-2xl font-semibold">Hello, It&apos;s Me</p>
+          <TypingEffect />
+          {/* <p className="typing relative text-5xl font-bold text-white">
+            Nguyen Anh Kiet
+            <span className="absolute left-full animate-pulse">|</span>
+          </p> */}
+          <p className="text-2xl font-semibold">
+            And i am a Fullstack Developer
+          </p>
+        </div>
+        <div className="flex items-center gap-x-4">
+          <ButtonSocial href="/">
+            <Instagram />
+          </ButtonSocial>
+          <ButtonSocial href="/">
+            <Facebook />
+          </ButtonSocial>
+          <ButtonSocial href="/">
+            <Linkedin />
+          </ButtonSocial>
+          <ButtonSocial href="/">
+            <Twitter />
+          </ButtonSocial>
+        </div>
+        <button className="bg-cyan-500 px-12 py-3 text-white rounded-full shadow-lg hover:bg-cyan-600 transition-all duration-500 relative text-xl font-semibold">
+          <span className="absolute inset-0 rounded-lg blur-lg opacity-50 bg-cyan-500 "></span>
+          More about me
+        </button>
+      </div>
+
+      <div className="relative w-[450px] h-[450px] rounded-full flex items-center justify-center">
+        <div className="absolute inset-0 blur-[30px] rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 opacity-75"></div>
+
+        <div className="w-[420px] h-[420px] bg-white rounded-full flex items-center justify-center">
+          <div className="relative w-[400px] h-[400px] overflow-hidden rounded-full">
+            <Image
+              src="/avatar-1.jpg"
+              width={400}
+              height={400}
+              className="object-cover"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
