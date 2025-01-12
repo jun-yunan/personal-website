@@ -1,11 +1,15 @@
 import About from './_components/about';
 import Home from './_components/home';
+import Services from './_components/services';
+import Skills from './_components/skills';
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="flex flex-col w-full">
       <Home />
       <About />
+      <Services />
+      <Skills />
     </div>
   );
 }

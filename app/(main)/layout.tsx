@@ -7,9 +7,9 @@ interface MainLayoutProps {
 
 const MainLayout: FunctionComponent<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="flex flex-col w-full items-center relative">
+    <div className="relative flex flex-col w-full items-center overflow-x-hidden">
       <Header />
-      <main className="mt-[75px] w-[85%] flex flex-col items-center">
+      <main className="mt-[75px] lg:w-[85%] w-full flex flex-col items-center">
         {children}
       </main>
     </div>

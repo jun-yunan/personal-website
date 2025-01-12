@@ -8,7 +8,7 @@ interface HomeProps {}
 
 const Home: FunctionComponent<HomeProps> = () => {
   return (
-    <div className="w-full h-[450px] mt-[50px] flex items-center justify-around">
+    <div className="w-full h-[450px] mt-[50px] flex flex-col lg:flex-row items-center justify-around">
       <div className="flex flex-col items-start gap-y-8">
         <div className="flex flex-col items-start gap-y-2">
           <p className="text-2xl font-semibold">Hello, It&apos;s Me</p>
@@ -41,10 +41,10 @@ const Home: FunctionComponent<HomeProps> = () => {
         </button>
       </div>
 
-      <div className="relative w-[450px] h-[450px] rounded-full flex items-center justify-center">
+      <div className=" relative w-[450px] h-[450px] rounded-full flex items-center justify-center">
         <div className="absolute inset-0 blur-[30px] rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 opacity-75"></div>
 
-        <div className="w-[420px] h-[420px] bg-white rounded-full flex items-center justify-center">
+        <div className="w-[420px] hidden h-[420px] bg-white rounded-full lg:flex items-center justify-center">
           <div className="relative w-[400px] h-[400px] overflow-hidden rounded-full">
             <Image
               src="/avatar-1.jpg"

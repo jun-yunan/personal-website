@@ -12,10 +12,10 @@ body {
   color: #f0f0f0;
 }
 
-body,
+/* body,
 html {
-  height: 100vh;
-}
+  height: 100%;
+} */
 
 @keyframes gradientAnimation {
   0% {
