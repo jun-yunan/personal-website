@@ -4,6 +4,7 @@ import { FunctionComponent } from 'react';
 import { motion } from 'framer-motion';
 import ButtonSocial from './button-social';
 import TypingEffect from './typing-effect';
+import Socials from './socials';
 
 interface HomeProps {}
 
@@ -46,20 +47,7 @@ const Home: FunctionComponent<HomeProps> = () => {
             And I am a Fullstack Developer
           </p>
         </div>
-        <div className="flex items-center gap-x-4">
-          <ButtonSocial href="/">
-            <Instagram />
-          </ButtonSocial>
-          <ButtonSocial href="/">
-            <Facebook />
-          </ButtonSocial>
-          <ButtonSocial href="/">
-            <Linkedin />
-          </ButtonSocial>
-          <ButtonSocial href="/">
-            <Twitter />
-          </ButtonSocial>
-        </div>
+        <Socials />
         <button className="bg-cyan-500 px-12 py-3 text-white rounded-full shadow-lg hover:bg-cyan-600 transition-all duration-500 relative text-xl font-semibold">
           <span className="absolute inset-0 rounded-lg blur-lg opacity-50 bg-cyan-500 "></span>
           More about me

@@ -14,6 +14,7 @@ const ButtonSocial: FunctionComponent<ButtonSocialProps> = ({
 }) => {
   return (
     <Link
+      target="_blank"
       href={href}
       className="group relative flex items-center justify-center p-3 rounded-full border-[3px] border-gray-500 transition-all duration-300 hover:border-cyan-500 hover:shadow-[0_0_15px_#00bcd4] focus:outline-none"
       aria-label={label}

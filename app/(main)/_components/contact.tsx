@@ -14,6 +14,7 @@ import {
   Twitter,
 } from 'lucide-react';
 import FormContact from './form-contact';
+import Socials from './socials';
 
 interface ContactProps {}
 
@@ -57,20 +58,7 @@ const Contact: FunctionComponent<ContactProps> = () => {
             <p className="text-lg font-medium">(84+) 763999584</p>
           </div>
         </div>
-        <div className="flex items-center gap-x-4 mt-4">
-          <ButtonSocial href="https://instagram.com">
-            <Instagram className="text-white hover:text-cyan-400 transition-colors" />
-          </ButtonSocial>
-          <ButtonSocial href="https://facebook.com">
-            <Facebook className="text-white hover:text-cyan-400 transition-colors" />
-          </ButtonSocial>
-          <ButtonSocial href="https://linkedin.com">
-            <Linkedin className="text-white hover:text-cyan-400 transition-colors" />
-          </ButtonSocial>
-          <ButtonSocial href="https://twitter.com">
-            <Twitter className="text-white hover:text-cyan-400 transition-colors" />
-          </ButtonSocial>
-        </div>
+        <Socials />
       </motion.div>
 
       <motion.div variants={sectionVariants} className="lg:flex-1 w-full">
