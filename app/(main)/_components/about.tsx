@@ -6,6 +6,14 @@ interface AboutProps {}
 
 const About: FunctionComponent<AboutProps> = () => {
   // Variants for motion animations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.3, delayChildren: 0.2 },
+    },
+  };
+
   const imageVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
@@ -31,6 +39,7 @@ const About: FunctionComponent<AboutProps> = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.4 }}
+      variants={containerVariants}
     >
       <div className="w-full lg:mt-[150px] lg:flex-row flex-col flex items-center justify-around">
         {/* Left Section with Image */}
@@ -54,12 +63,22 @@ const About: FunctionComponent<AboutProps> = () => {
 
         {/* Right Section with Text */}
         <motion.div
-          variants={textVariants}
+          variants={containerVariants}
           className="lg:max-w-[40%] w-[90%] flex flex-col lg:items-start items-center gap-y-6"
         >
-          <p className="lg:text-7xl text-7xl font-bold">About Me</p>
-          <p className="text-4xl font-semibold">Nguyen Anh Kiet</p>
-          <p className="lg:text-lg text-base text-wrap break-words whitespace-pre-wrap">
+          <motion.p
+            variants={textVariants}
+            className="lg:text-7xl text-7xl font-bold"
+          >
+            About Me
+          </motion.p>
+          <motion.p variants={textVariants} className="text-4xl font-semibold">
+            Nguyen Anh Kiet
+          </motion.p>
+          <motion.p
+            variants={textVariants}
+            className="lg:text-lg text-base text-wrap break-words whitespace-pre-wrap"
+          >
             I&apos;m a 22-year-old software engineering student passionate about
             creating scalable and user-friendly applications with expertise in
             frontend technologies like HTML, CSS, JavaScript, React.js, and
@@ -69,7 +88,7 @@ const About: FunctionComponent<AboutProps> = () => {
             proficiency in version control using Git and deployment with Docker,
             constantly striving to deliver efficient, maintainable, and
             impactful solutions for modern software challenges.
-          </p>
+          </motion.p>
         </motion.div>
       </div>
     </motion.div>

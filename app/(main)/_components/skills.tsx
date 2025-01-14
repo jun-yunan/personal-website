@@ -5,8 +5,16 @@ import { motion } from 'framer-motion';
 interface SkillsProps {}
 
 const Skills: FunctionComponent<SkillsProps> = () => {
-  // Variants for animations
-  const sectionVariants = {
+  // Variants for container and items
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+    },
+  };
+
+  const titleVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
@@ -33,7 +41,7 @@ const Skills: FunctionComponent<SkillsProps> = () => {
     >
       {/* Title Animation */}
       <motion.p
-        variants={sectionVariants}
+        variants={titleVariants}
         className="text-5xl font-extrabold text-cyan-400 tracking-wide"
       >
         My Skills
@@ -42,10 +50,7 @@ const Skills: FunctionComponent<SkillsProps> = () => {
       {/* Skills Grid */}
       <motion.div
         className="grid grid-cols-3 lg:grid-cols-6 gap-6"
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        variants={containerVariants}
       >
         {/* Skill Items */}
         {[

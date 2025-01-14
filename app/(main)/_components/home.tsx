@@ -10,6 +10,14 @@ interface HomeProps {}
 
 const Home: FunctionComponent<HomeProps> = () => {
   // Variants for motion animations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.3, delayChildren: 0.2 },
+    },
+  };
+
   const textVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -33,25 +41,38 @@ const Home: FunctionComponent<HomeProps> = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.4 }}
+      variants={containerVariants}
       className="w-full h-[450px] mt-[50px] flex flex-col lg:flex-row items-center justify-around"
     >
       {/* Left Section with Text */}
       <motion.div
-        variants={textVariants}
         className="flex flex-col items-start gap-y-8"
+        variants={containerVariants}
       >
-        <div className="flex flex-col items-start gap-y-2">
-          <p className="text-2xl font-semibold">Hello, It&apos;s Me</p>
+        <motion.div
+          variants={textVariants}
+          className="flex flex-col items-start gap-y-2"
+        >
+          <motion.p variants={textVariants} className="text-2xl font-semibold">
+            Hello, It&apos;s Me
+          </motion.p>
           <TypingEffect />
-          <p className="text-2xl font-semibold">
+          <motion.p variants={textVariants} className="text-2xl font-semibold">
             And I am a Fullstack Developer
-          </p>
-        </div>
-        <Socials />
-        <button className="bg-cyan-500 px-12 py-3 text-white rounded-full shadow-lg hover:bg-cyan-600 transition-all duration-500 relative text-xl font-semibold">
-          <span className="absolute inset-0 rounded-lg blur-lg opacity-50 bg-cyan-500 "></span>
+          </motion.p>
+        </motion.div>
+
+        <motion.div variants={textVariants}>
+          <Socials />
+        </motion.div>
+
+        <motion.button
+          variants={textVariants}
+          className="bg-cyan-500 px-12 py-3 text-white rounded-full shadow-lg hover:bg-cyan-600 transition-all duration-500 relative text-xl font-semibold"
+        >
+          <span className="absolute inset-0 rounded-lg blur-lg opacity-50 bg-cyan-500"></span>
           More about me
-        </button>
+        </motion.button>
       </motion.div>
 
       {/* Right Section with Image */}
